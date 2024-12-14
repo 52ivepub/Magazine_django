@@ -1,2 +1,1 @@
-# Magazine_django
-Magazine_django
+# Изучаю Django
