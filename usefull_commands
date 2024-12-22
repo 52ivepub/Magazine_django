@@ -1,0 +1,1 @@
+'python manage.py dumpdata goods.Categories > fixtures/goods/cats.json' # сохранить данные из базы данных в json
