@@ -29,4 +29,6 @@ urlpatterns = [
     path('', include('main.urls', namespace='main')),   # полключение urls.py из main
     path('catalog/', include('goods.urls', namespace='catalog')),
 
-] + debug_toolbar_urls() + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+] 
+urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT) 
+urlpatterns += debug_toolbar_urls()
