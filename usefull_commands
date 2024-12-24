@@ -1,1 +1,3 @@
 'python manage.py dumpdata goods.Categories > fixtures/goods/cats.json' # сохранить данные из базы данных в json
+
+<a href="{% url 'catalog:product' product.id %}">  # сделали страницу для каждого товара

@@ -1,4 +1,6 @@
 {% load static %}
+
+{% load  goods_tags %}
 <!DOCTYPE html>
 <html lang="en">
 
@@ -84,12 +86,14 @@
                     <button class="btn btn-secondary dropdown-toggle btn-dark" type="button" data-bs-toggle="dropdown"
                         aria-expanded="false">
                         Каталог
-                        <img class="mx-1" src="{% static "deps/icons/grid-fill.svg" %}" alt="Catalog Icon" width="16"
+                        <img class="mx-1" src="{% static 'deps/icons/grid-fill.svg' %}" alt="Catalog Icon" width="16"
                             height="16">
                     </button>
                     <ul class="dropdown-menu bg-dark" data-bs-theme="dark">
+                        {% tag_categories as categories %}
+
                         {% for category in  categories %}
-                        <li><a class="dropdown-item text-white" href="{% url "catalog:index" %}"> {{ category.name }}</a></li>  
+                        <li><a class="dropdown-item text-white" href="{% url 'catalog:index' category.slug  %}"> {{ category.name }}</a></li>  
                         {% endfor %}
                         
             
@@ -99,7 +103,7 @@
                 <div>
                     <button type="button" class="btn btn-dark btn-secondary d-flex" id="modalButton"
                         aria-expanded="false">
-                        <img class="mx-1" src="{% static "deps/icons/basket2-fill.svg" %}" alt="Catalog Icon" width="24"
+                        <img class="mx-1" src="{% static 'deps/icons/basket2-fill.svg' %}" alt="Catalog Icon" width="24"
                             height="24">
                         <span id="goods-in-cart-count">0</span>
                     </button>
