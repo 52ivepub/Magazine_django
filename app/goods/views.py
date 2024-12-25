@@ -16,7 +16,7 @@ def catalog(request, category_slug):
     
     if on_sale:
         goods = goods.filter(discount__gt=0)
-    if order_by:
+    if order_by and order_by != 'default':
         goods = goods.order_by(order_by)
         
     paginator = Paginator(goods, 3)
