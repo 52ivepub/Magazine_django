@@ -1,3 +1,7 @@
 'python manage.py dumpdata goods.Categories > fixtures/goods/cats.json' # сохранить данные из базы данных в json
 
 <a href="{% url 'catalog:product' product.id %}">  # сделали страницу для каждого товара
+
+'pip install psycopg2-binary'  # необходимо для создание миграций в postgres
+
+'python manage.py loaddata fixtures/goods/products.json' # установить данные базы данных из фикстур 
