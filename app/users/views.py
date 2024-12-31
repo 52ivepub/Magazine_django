@@ -1,9 +1,14 @@
 from django.shortcuts import render
 
+from users.forms import UserLoginForm
+
 
 def login(request):
+    form = UserLoginForm()
     context = {
-        'title': 'Home - Авторизация'
+        'title': 'Home - Авторизация',
+        'form': form,
+         
     }
     return render(request, 'users/login.html', context)
 

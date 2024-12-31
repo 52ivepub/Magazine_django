@@ -159,4 +159,6 @@ INTERNAL_IPS = [
     # ...
 ]
 
+AUTH_USER_MODEL = 'users.Users'
+
 
